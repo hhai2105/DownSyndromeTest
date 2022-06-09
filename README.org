@@ -1,27 +1,22 @@
 * Down Syndrome Testing
+A Down Syndrome testing software.
 
-* Documentation
-** Current Method of Image processing
--Turn image into “grayscale”, black and white photo
--Saturation value does not change horizontally as seen in photo above, so we turn the photo into a two dimensional set of data, with the x axis being the pixel number going from top to bottom, and the y axis being the saturation (lightness) of the pixel
-fig2
--to find the test and control lines, we made a graph of change in pixel saturation. We also find the most common saturation value, and say that this is the white of the test strip. Whenever the change in saturation went past a threshold relative to this average, we would say that there is a T or C line.fig3
--split up the left and right side, consider each separately
--we then found the max value of the t and c lines
--next we made a plot of max t sat values vs the known hCG concentration for each test photo:
-Fig4
--as seen above, there is a linear relationship between the log of hcg concentration and the max t sat value. This was stated in the article, however we proved that our algorithm provides the same results
-** Next Steps
-*** TODO we need to factor in environmental differences which may impact the input image. One predicted difference is changes in angle, meaning the test lines cannot be averaged horizontally. One way around this is to use the present right angles in the image (corners of test) to triangulate and adjust the image to a perpendicular version like in fig1.
-Create Binary Image to focus on the testing strip using RGB.
-*** TODO we should also take photos of objects similar to this test, and take variations of photos similar to how we expect them to be taken by users. This might show us differences not yet accounted for.
-*** TODO use grayscale technique but for RGB, consider combining RGB and grayscale(might be more accurate)
-*** TODO after we are confident with our algorithm, we then relate values of saturation with concentration of hCG and PAPP-A. There is an article that shows the logarithmic relationship for hCG, but this is in urine, so it could be different in blood, PAPP-A. Further research is needed.
-*** TODO after we have a relationship, we should find the margin of error for our saturation values, and therefore concentration values.
-*** TODO we then use these concentration values to give an associated risk the child has down syndrome due to hCG and PAPP-A. A lot of research is needed to see how this works.
-*** TODO now with the associated risk due to hCG and PAPP-A values, we factor in another set of hCG and PAPP-A tests, maternal age, and other factors we find to have an impact on the total risk. 
-*** TODO we now have total risk for down syndrome and a known level of accuracy.
-*** TODO change the text output to one file per section (concentration, t value, c value,)
+* Steps In the prcess
+** TODO Component extraaction based on RGB color model
+Based on the paper, we've created a binary image from the equation
+BI = R1 > 1.06 \times G1 & R1 > 1.09 \times B1
+The Following pictures were created.
+[[./img/BinaryImage/img.jpg][Binary Image]]
+* Old Method of Image processing(Documented)
+- Turn image into “grayscale”, black and white photo
+Saturation value does not change horizontally as seen in photo above, so we turn the photo into a two dimensional set of data, with the x axis being the pixel number going from top to bottom, and the y axis being the saturation (lightness) of the pixel
+[[./img/10.png][Fig 3]]
+- to find the test and control lines, we made a graph of change in pixel saturation. We also find the most common saturation value, and say that this is the white of the test strip. Whenever the change in saturation went past a threshold relative to this average, we would say that there is a T or C line.fig3
+- split up the left and right side, consider each separately
+- we then found the max value of the t and c lines
+- next we made a plot of max t sat values vs the known hCG concentration for each test photo:
+- as seen above, there is a linear relationship between the log of hcg concentration and the max t sat value. This was stated in the article, however we proved that our algorithm provides the same results
+[]
 * Reference
 ** A smartphone-based rapid quantitative detection platform for lateral flow strip of human chorionic gonadotropin with optimized image algorithm
 [[https://www.sciencedirect.com/science/article/abs/pii/S0026265X20304355?via%3Dihub]]
