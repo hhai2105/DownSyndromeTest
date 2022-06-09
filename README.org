@@ -3,7 +3,8 @@ A Down Syndrome testing software.
 
 * Steps In the prcess
 ** TODO Create Image cropping technique
-Created 
+Created a GUI that let user choose 4 points of an image
+Warp image into a specific size using opencv
 ** DONE Component extraction based on RGB color model
 Based on the paper, we've created a binary image from the equation
 BI = R1 > 1.06 \times G1 & R1 > 1.09 \times B1
