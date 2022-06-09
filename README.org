@@ -2,14 +2,18 @@
 A Down Syndrome testing software.
 
 * Steps In the prcess
-** TODO Component extraaction based on RGB color model
+** TODO Create Image cropping technique
+Created 
+** DONE Component extraction based on RGB color model
 Based on the paper, we've created a binary image from the equation
-
 BI = R1 > 1.06 \times G1 & R1 > 1.09 \times B1
-
 The Following pictures were created.
-
 [[./img/original/100.png]] [[./img/BinaryImage/img.png]]
+** DONE Gray Projection value processing based on test strip
+The following method has been implemented using old Method of Image processing
+The Following graph was created.
+
+[[./img/original/100.png]] [[./img/saturation/100_saturation.png]]
 * Old Method of Image processing(Documented)
 - Turn image into “grayscale”, black and white photo
 Saturation value does not change horizontally as seen in photo above, so we turn the photo into a two dimensional set of data, with the x axis being the pixel number going from top to bottom, and the y axis being the saturation (lightness) of the pixel
