@@ -29,3 +29,11 @@ Saturation value does not change horizontally as seen in photo above, so we turn
 ** A smartphone-based rapid quantitative detection platform for lateral flow strip of human chorionic gonadotropin with optimized image algorithm
 [[https://www.sciencedirect.com/science/article/abs/pii/S0026265X20304355?via%3Dihub]]
 [[./resources/rapidantigenimageprocess.pdf]]
+
+** a randomized combined Channel Approach for the Quantification of Color 
+https://pubs.acs.org/doi/pdf/10.1021/acs.analchem.0c01099
+** Enhancing the analytical performance of paper lateral flow assays: From chemistry to engineering
+https://www.sciencedirect.com/science/article/abs/pii/S0165993621000224?casa_token=Qa8LJ5PdWEcAAAAA:i2w8ZeVGVJiywFSWkQBkhVEGJGQbV6V83ocws90-V9pACn0OPWCbHXs-smzhIcgv0bn6Zyr-
+
+** Pixel-wise Illumination Correction Algorithms for Relative Color Constancy Under the Spectral Domain
+https://ieeexplore.ieee.org/document/8642759

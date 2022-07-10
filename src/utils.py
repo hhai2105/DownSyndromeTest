@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
+from skimage import color
 
 def createPixelArray(img):
     return np.array(img)
@@ -28,6 +29,7 @@ def initializedict():
     return map
 
 def createDeltaArray(img):
+    margin_of_error = .2
     gray_img=img.convert('L')
     gray_img_array=np.asarray(gray_img)
     pixel_value = []
@@ -48,3 +50,21 @@ def createDeltaArray(img):
         if(len(pixel_value) > 1):
             delta_value.append(pixel_value[len(pixel_value) - 1] - pixel_value[len(pixel_value) - 2])
             pixel_number.append(current_pixel)
+
+def preprocess(img):
+    margin_of_error = .2
+    gray_img=img.convert('L')
+    gray_img_array=np.asarray(gray_img)
+    average = [sum(line)/len(line) for line in gray_img_array]
+
+    # 32 to 75 : T line
+    # 194 to 234 : C line
+    # max: 255
+    c_value = average[int(len(average) * .125): int(len(average) * .3)]
+    c_value = sum(c_value) / len(c_value)
+    t_value = average[int(len(average) * .76): int(len(average) * .92)]
+    t_value = 255 - min(t_value)
+    return c_value, t_value
+
+def fitfunction():
+    pass
